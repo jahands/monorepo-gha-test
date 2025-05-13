@@ -59,10 +59,7 @@ jobs:
         id: create-release-pr
         uses: changesets/action@v1
         with:
-          publish: |
-            echo "Publishing..." &&
-            env &&
-            pnpm changeset publish
+          publish: pnpm run publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Print outputs

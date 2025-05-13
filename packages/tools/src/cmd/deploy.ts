@@ -21,9 +21,8 @@ export const deployWorkersProductionCmd = new Command('deploy-workers-production
 					throw cliError(`No published packages file found at ${publishedPackagesPath}`)
 				} else if (e instanceof z.ZodError) {
 					throw new Error(`Failed to parse published packages: ${z.prettifyError(e)}`)
-				} else {
-					throw new Error(`Failed to parse published packages: ${e}`)
 				}
+				throw new Error(`Failed to parse published packages: ${e}`)
 			})
 
 		const filters = publishedPackages.flatMap((p) => ['-F', p.name]) satisfies string[]

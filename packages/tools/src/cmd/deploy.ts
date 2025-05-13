@@ -6,34 +6,40 @@ import { z } from '@repo/zod'
 export const deployWorkersProductionCmd = new Command('deploy-workers-production')
 	.description('Deploy Cloudflare Workers to production (based on changesets)')
 	.action(async () => {
+		const publishedPackagesPath = path.join(
+			process.env.RUNNER_TEMP ?? './',
+			'published-packages.json'
+		)
+
+		echo(chalk.dim(`Reading published packages from ${publishedPackagesPath}`))
+
 		const publishedPackages = await fs
-			.readFile('./published-packages.json', 'utf8')
-			.then((s) => {
-				const maybePublishedPackages = PublishedPackages.safeParse(JSON.parse(s))
-				if (!maybePublishedPackages.success) {
-					throw cliError(
-						`Failed to parse published packages: ${z.prettifyError(maybePublishedPackages.error)}`
-					)
-				}
-				return maybePublishedPackages.data.packages
-			})
+			.readFile(publishedPackagesPath, 'utf8')
+			.then((s) => PublishedPackages.parse(JSON.parse(s)))
 			.catch((e) => {
 				if (isNotFoundError(e)) {
-					throw cliError('No published packages file found at ./published-packages.json')
+					throw cliError(`No published packages file found at ${publishedPackagesPath}`)
+				} else if (e instanceof z.ZodError) {
+					throw new Error(`Failed to parse published packages: ${z.prettifyError(e)}`)
+				} else {
+					throw new Error(`Failed to parse published packages: ${e}`)
 				}
-				throw e
 			})
 
 		const filters = publishedPackages.flatMap((p) => ['-F', p.name]) satisfies string[]
 
-		await $`turbo deploy ${filters}`.verbose()
+		await $({
+			verbose: true,
+			env: {
+				...process.env,
+				FORCE_COLOR: '1',
+			},
+		})`turbo deploy ${filters}`
 	})
 
-const PublishedPackages = z.object({
-	packages: z.array(
-		z.object({
-			name: z.string(),
-			version: z.string(),
-		})
-	),
-})
+const PublishedPackages = z.array(
+	z.object({
+		name: z.string(),
+		version: z.string(),
+	})
+)

@@ -99,6 +99,4 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --child-concurrency=10
       - name: Deploy
-        run: |
-          cat ${{ runner.temp }}/published-packages.json
-          pnpm runx deploy-workers-production
+        run: pnpm runx deploy-workers-production

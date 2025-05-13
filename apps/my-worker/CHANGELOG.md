@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.3.2
+
+### Patch Changes
+
+- 5624867: some file
+
 ## 0.3.1
 
 ### Patch Changes

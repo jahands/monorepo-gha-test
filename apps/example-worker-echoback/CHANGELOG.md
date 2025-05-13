@@ -1,5 +1,11 @@
 # example-worker-echoback
 
+## 0.2.8
+
+### Patch Changes
+
+- 7ba7fb3: stuff
+
 ## 0.2.7
 
 ### Patch Changes

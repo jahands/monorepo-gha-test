@@ -1,5 +1,11 @@
 # example-worker-echoback
 
+## 0.3.1
+
+### Patch Changes
+
+- 010ecd0: fix it
+
 ## 0.3.0
 
 ### Minor Changes

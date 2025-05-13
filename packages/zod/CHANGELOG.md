@@ -1,5 +1,11 @@
 # @repo/zod
 
+## 0.1.3
+
+### Patch Changes
+
+- 1be1760: patch all the things!
+
 ## 0.1.2
 
 ### Patch Changes

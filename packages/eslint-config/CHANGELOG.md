@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.1.5
+
+### Patch Changes
+
+- 1be1760: patch all the things!
+
 ## 0.1.4
 
 ### Patch Changes

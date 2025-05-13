@@ -1,5 +1,13 @@
 # @repo/tools
 
+## 0.3.2
+
+### Patch Changes
+
+- 1be1760: patch all the things!
+- Updated dependencies [1be1760]
+  - @repo/zod@0.1.3
+
 ## 0.3.1
 
 ### Patch Changes

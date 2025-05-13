@@ -56,6 +56,10 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --child-concurrency=10 --filter .
       - name: Create Release PR
+        id: create-release-pr
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print outputs
+        run: |
+          echo "Outputs: ${{ toJSON(steps.create-release-pr.outputs) }}"

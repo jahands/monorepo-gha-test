@@ -1,5 +1,11 @@
 # example-worker-echoback
 
+## 0.2.0
+
+### Minor Changes
+
+- 1861ffd: some feature
+
 ## 0.1.3
 
 ### Patch Changes

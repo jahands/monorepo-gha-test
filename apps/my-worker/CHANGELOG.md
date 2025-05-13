@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.5.0
+
+### Minor Changes
+
+- 1808502: some feat 123
+
 ## 0.4.0
 
 ### Minor Changes

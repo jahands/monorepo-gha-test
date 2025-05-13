@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.2.5
+
+### Patch Changes
+
+- 340a00e: stop tagging to see if it works
+
 ## 0.2.4
 
 ### Patch Changes

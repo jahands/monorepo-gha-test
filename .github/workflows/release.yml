@@ -91,7 +91,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: published-packages
-          path: ${{ runner.temp }}/published-packages.json
+          path: ${{ runner.temp }}
       - uses: pnpm/action-setup@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4

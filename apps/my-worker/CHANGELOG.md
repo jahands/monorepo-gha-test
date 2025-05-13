@@ -1,5 +1,13 @@
 # my-worker
 
+## 0.5.1
+
+### Patch Changes
+
+- 1be1760: patch all the things!
+- Updated dependencies [1be1760]
+  - @repo/hono-helpers@0.1.5
+
 ## 0.5.0
 
 ### Minor Changes

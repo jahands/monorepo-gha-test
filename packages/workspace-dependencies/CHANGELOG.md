@@ -1,5 +1,14 @@
 # @repo/workspace-dependencies
 
+## 0.1.4
+
+### Patch Changes
+
+- 1be1760: patch all the things!
+- Updated dependencies [1be1760]
+  - @repo/tools@0.3.2
+  - @repo/zod@0.1.3
+
 ## 0.1.3
 
 ### Patch Changes

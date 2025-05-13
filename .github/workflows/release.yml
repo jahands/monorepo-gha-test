@@ -65,3 +65,8 @@ jobs:
       - name: Print outputs
         run: |
           echo "Outputs: ${{ join(steps.create-release-pr.outputs.*, '\n') }}"
+      - name: Print turbo filters
+        if: steps.create-release-pr.outputs.published == true
+        run: |
+          echo "${{steps.create-release-pr.outputs.publishedPackages}}" |
+            jq -r '[.[] | "-F \(.name)"] | join(" ")'

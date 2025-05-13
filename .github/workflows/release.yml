@@ -102,5 +102,5 @@ jobs:
         run: pnpm install --frozen-lockfile --child-concurrency=10
       - name: Deploy
         run: |
-          cat published-packages.json
+          cat ${{ runner.temp }}/published-packages.json
           pnpm runx deploy-workers-production

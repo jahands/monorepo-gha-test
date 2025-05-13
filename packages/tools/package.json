@@ -31,6 +31,7 @@
 		"zx": "8.5.3"
 	},
 	"devDependencies": {
+		"@types/fs-extra": "11.0.4",
 		"vitest": "3.1.3"
 	}
 }

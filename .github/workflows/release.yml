@@ -102,4 +102,4 @@ jobs:
       - name: Deploy
         run: |
           cat published-packages.json
-          # TODO: Add your deploy script here
+          pnpm runx deploy-workers-production

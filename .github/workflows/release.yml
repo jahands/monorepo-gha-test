@@ -67,5 +67,5 @@ jobs:
           echo "Outputs: ${{ toJson(steps.create-release-pr.outputs) }}"
       - name: Print turbo filters
         run: |
-          echo "${{steps.create-release-pr.outputs.publishedPackages}}" |
+          echo '${{steps.create-release-pr.outputs.publishedPackages}}' |
             jq -r '[.[] | "-F \(.name)"] | join(" ")'

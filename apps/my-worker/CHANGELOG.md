@@ -1,5 +1,13 @@
 # my-worker
 
+## 0.2.6
+
+### Patch Changes
+
+- 9bcd3af: some feature
+- Updated dependencies [9bcd3af]
+  - @repo/hono-helpers@0.1.3
+
 ## 0.2.5
 
 ### Patch Changes

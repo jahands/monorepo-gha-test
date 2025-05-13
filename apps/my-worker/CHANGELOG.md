@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.3.0
+
+### Minor Changes
+
+- 7a07ef8: some feat!
+
 ## 0.2.6
 
 ### Patch Changes

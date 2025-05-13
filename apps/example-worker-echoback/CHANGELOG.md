@@ -1,5 +1,12 @@
 # example-worker-echoback
 
+## 0.1.3
+
+### Patch Changes
+
+- 752b71e: chore: did stuff!
+  - @repo/hono-helpers@0.1.2
+
 ## 0.1.2
 
 ### Patch Changes

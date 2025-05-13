@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.5.2
+
+### Patch Changes
+
+- fc2a20d: cleanup workflow
+
 ## 0.5.1
 
 ### Patch Changes

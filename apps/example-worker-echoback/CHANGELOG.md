@@ -1,5 +1,15 @@
 # example-worker-echoback
 
+## 0.4.0
+
+### Minor Changes
+
+- 9d53ff7: some feat
+
+### Patch Changes
+
+- fc2a20d: cleanup workflow
+
 ## 0.3.3
 
 ### Patch Changes

@@ -69,10 +69,12 @@ jobs:
         if: steps.create-release-pr.outputs.published == 'true'
         id: turbo-filters
         run: |
-          echo "turbo_filters<<EOF" >> $GITHUB_OUTPUT
-          echo '${{steps.create-release-pr.outputs.publishedPackages}}' |
-            jq -r '[.[] | "-F \(.name)"] | join(" ")' >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          {
+            echo "turbo_filters<<EOF"
+            echo '${{steps.create-release-pr.outputs.publishedPackages}}' |
+              jq -r '[.[] | "-F \(.name)"] | join(" ")'
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
       - name: Deploy
         if: steps.create-release-pr.outputs.published == 'true'
         run: |

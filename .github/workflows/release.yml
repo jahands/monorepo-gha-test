@@ -58,6 +58,11 @@ jobs:
       - name: Create Release PR
         id: create-release-pr
         uses: changesets/action@v1
+        with:
+          publish: |
+            echo "Publishing..."
+            env
+            pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Print outputs
@@ -66,6 +71,7 @@ jobs:
 
   deploy-versioned-workers:
     name: Deploy Versioned Workers
+    if: false
     runs-on: ubuntu-latest
     # This job runs on any push to main. It will determine if versioned packages need deployment.
     # It effectively runs after the PR from 'create-release-pr' is merged.

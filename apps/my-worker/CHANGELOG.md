@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.2.4
+
+### Patch Changes
+
+- 630098f: use single quotes
+
 ## 0.2.3
 
 ### Patch Changes

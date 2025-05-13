@@ -66,6 +66,7 @@ jobs:
         run: |
           echo "Outputs: ${{ toJson(steps.create-release-pr.outputs) }}"
       - name: Print turbo filters
+        if: steps.create-release-pr.outputs.published
         id: turbo-filters
         run: |
           echo "turbo_filters<<EOF" >> $GITHUB_OUTPUT
@@ -73,6 +74,7 @@ jobs:
             jq -r '[.[] | "-F \(.name)"] | join(" ")' >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Deploy
+        if: steps.create-release-pr.outputs.published
         run: |
           echo "Deploying with filters: ${{ steps.turbo-filters.outputs.turbo_filters }}"
           pnpm turbo deploy ${{ steps.turbo-filters.outputs.turbo_filters }}

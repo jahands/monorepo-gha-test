@@ -1,3 +1,1 @@
-turbo_filters<<EOF
--F example-worker-echoback -F my-worker -F @repo/eslint-config -F @repo/hono-helpers
-EOF
+turbo_filters=-F example-worker-echoback -F my-worker -F @repo/eslint-config -F @repo/hono-helpers

@@ -61,17 +61,14 @@ jobs:
         id: create-release-pr
         uses: changesets/action@v1
         with:
-          publish: pnpm run publish
+          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print outputs
-        run: |
-          echo "Outputs: ${{ toJson(steps.create-release-pr.outputs) }}"
-      - name: Save published packages
+      - name: Save Published Packages
         if: steps.create-release-pr.outputs.published == 'true'
         run: |
           echo '${{steps.create-release-pr.outputs.publishedPackages}}' > ${{ github.workspace }}/published-packages.json
-      - name: Upload published packages
+      - name: Upload Published Packages
         if: steps.create-release-pr.outputs.published == 'true'
         uses: actions/upload-artifact@v4
         with:

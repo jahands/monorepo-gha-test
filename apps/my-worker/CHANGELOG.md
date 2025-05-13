@@ -1,5 +1,11 @@
 # my-worker
 
+## 0.6.0
+
+### Minor Changes
+
+- bc45af4: another feat
+
 ## 0.5.2
 
 ### Patch Changes

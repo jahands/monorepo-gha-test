@@ -1,5 +1,13 @@
 # @repo/hono-helpers
 
+## 0.1.4
+
+### Patch Changes
+
+- 5f29f56: chore: simplify script
+- Updated dependencies [5f29f56]
+  - @repo/zod@0.1.2
+
 ## 0.1.3
 
 ### Patch Changes

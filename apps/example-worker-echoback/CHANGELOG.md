@@ -1,5 +1,13 @@
 # example-worker-echoback
 
+## 0.2.7
+
+### Patch Changes
+
+- 5f29f56: chore: simplify script
+- Updated dependencies [5f29f56]
+  - @repo/hono-helpers@0.1.4
+
 ## 0.2.6
 
 ### Patch Changes

@@ -18,7 +18,7 @@ export const deployWorkersProductionCmd = new Command('deploy-workers-production
 			.then((s) => PublishedPackages.parse(JSON.parse(s)))
 			.catch((e) => {
 				if (isNotFoundError(e)) {
-					throw cliError(`No published packages file found at ${publishedPackagesPath}`)
+					throw cliError(`No published packages file found at: ${publishedPackagesPath}`)
 				} else if (e instanceof z.ZodError) {
 					throw new Error(`Failed to parse published packages: ${z.prettifyError(e)}`)
 				}

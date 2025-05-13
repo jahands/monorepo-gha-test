@@ -1,5 +1,12 @@
 # my-worker
 
+## 0.4.0
+
+### Minor Changes
+
+- 6128c44: another feat
+- df4e1e0: another feat
+
 ## 0.3.2
 
 ### Patch Changes

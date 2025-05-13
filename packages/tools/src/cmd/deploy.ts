@@ -11,7 +11,9 @@ export const deployWorkersProductionCmd = new Command('deploy-workers-production
 			.then((s) => {
 				const maybePublishedPackages = PublishedPackages.safeParse(JSON.parse(s))
 				if (!maybePublishedPackages.success) {
-					throw cliError(`Failed to parse published packages: ${maybePublishedPackages.error}`)
+					throw cliError(
+						`Failed to parse published packages: ${z.prettifyError(maybePublishedPackages.error)}`
+					)
 				}
 				return maybePublishedPackages.data.packages
 			})

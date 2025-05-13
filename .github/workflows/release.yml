@@ -44,6 +44,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    outputs:
+      published: ${{ steps.create-release-pr.outputs.published }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -54,7 +56,7 @@ jobs:
           node-version: lts/*
           # cache: 'pnpm'
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile --child-concurrency=10
+        run: pnpm install --frozen-lockfile --child-concurrency=10 --filter .
       - name: Create Release PR
         id: create-release-pr
         uses: changesets/action@v1
@@ -69,7 +71,35 @@ jobs:
         if: steps.create-release-pr.outputs.published == 'true'
         run: |
           echo '${{steps.create-release-pr.outputs.publishedPackages}}' > ${{ github.workspace }}/published-packages.json
-      - name: Deploy
+      - name: Upload published packages
         if: steps.create-release-pr.outputs.published == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-packages
+          path: ${{ github.workspace }}/published-packages.json
+
+  deploy:
+    name: Deploy
+    needs: create-release-pr
+    if: needs.create-release-pr.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Download published packages
+        uses: actions/download-artifact@v4
+        with:
+          name: published-packages
+      - uses: pnpm/action-setup@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          # cache: 'pnpm'
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --child-concurrency=10
+      - name: Deploy
         run: |
-          cat ${{ github.workspace }}/published-packages.json
+          cat published-packages.json
+          # TODO: Add your deploy script here

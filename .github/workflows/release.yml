@@ -64,4 +64,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Print outputs
         run: |
-          echo "Outputs: ${{ toJSON(steps.create-release-pr.outputs) }}"
+          echo "Outputs: ${{ join(steps.create-release-pr.outputs.*, '\n') }}"

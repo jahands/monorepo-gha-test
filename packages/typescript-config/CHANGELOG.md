@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 5bd3813: some patch
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @repo/hono-helpers
 
+## 0.1.6
+
+### Patch Changes
+
+- 5bd3813: some patch
+- Updated dependencies [5bd3813]
+  - @repo/zod@0.1.4
+
 ## 0.1.5
 
 ### Patch Changes

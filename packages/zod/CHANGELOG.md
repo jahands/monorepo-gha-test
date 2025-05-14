@@ -1,5 +1,11 @@
 # @repo/zod
 
+## 0.1.4
+
+### Patch Changes
+
+- 5bd3813: some patch
+
 ## 0.1.3
 
 ### Patch Changes

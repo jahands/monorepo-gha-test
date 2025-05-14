@@ -1,5 +1,13 @@
 # @repo/tools
 
+## 0.4.2
+
+### Patch Changes
+
+- 5bd3813: some patch
+- Updated dependencies [5bd3813]
+  - @repo/zod@0.1.4
+
 ## 0.4.1
 
 ### Patch Changes

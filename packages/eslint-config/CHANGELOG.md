@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.1.6
+
+### Patch Changes
+
+- 5bd3813: some patch
+
 ## 0.1.5
 
 ### Patch Changes

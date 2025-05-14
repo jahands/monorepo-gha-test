@@ -1,5 +1,11 @@
 # @repo/eslint-config
 
+## 0.1.7
+
+### Patch Changes
+
+- cb74ba8: some patch 123
+
 ## 0.1.6
 
 ### Patch Changes

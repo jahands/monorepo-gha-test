@@ -65,7 +65,7 @@ jobs:
       - name: Trigger Main Workflow Deploy
         if: steps.create-release-pr.outputs.published == 'true'
         run: |
-          gh workflow run main.yml --ref ${{ github.ref }}
+          gh workflow run main.yml --ref changeset-release/main
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Save Published Packages

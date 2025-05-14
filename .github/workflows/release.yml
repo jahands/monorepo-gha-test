@@ -70,6 +70,7 @@ jobs:
       - name: Trigger Main Workflow Deploy
         if: steps.create-release-pr.outputs.hasChangesets == 'true'
         run: |
+          sleep 5
           gh workflow run main.yml --ref ${{ steps.get-sha.outputs.sha }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

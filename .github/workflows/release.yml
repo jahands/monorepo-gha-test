@@ -42,6 +42,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      actions: write
     outputs:
       published: ${{ steps.create-release-pr.outputs.published }}
     steps:
@@ -67,7 +68,7 @@ jobs:
         run: |
           gh workflow run main.yml --ref changeset-release/main
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Save Published Packages
         if: steps.create-release-pr.outputs.published == 'true'
         run: |

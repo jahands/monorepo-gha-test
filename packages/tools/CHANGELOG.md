@@ -1,5 +1,15 @@
 # @repo/tools
 
+## 0.4.0
+
+### Minor Changes
+
+- 4098da2: feat: refactor into multiple files and add tests
+
+### Patch Changes
+
+- f538549: chore: improve script a bit
+
 ## 0.3.2
 
 ### Patch Changes

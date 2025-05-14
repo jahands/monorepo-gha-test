@@ -6,10 +6,15 @@ import { z } from '@repo/zod'
 export const deployWorkersProductionCmd = new Command('deploy-workers-production')
 	.description('Deploy Cloudflare Workers to production (based on changesets)')
 	.action(async () => {
-		const publishedPackagesPath = path.join(
-			process.env.RUNNER_TEMP ?? './',
-			'published-packages.json'
-		)
+		const runnerTemp = await z
+			.string({ error: '$RUNNER_TEMP is not set' })
+			.min(1, { error: '$RUNNER_TEMP is empty' })
+			.parseAsync(process.env.RUNNER_TEMP)
+			.catch((e) => {
+				throw cliError(z.prettifyError(e))
+			})
+
+		const publishedPackagesPath = path.join(runnerTemp, 'published-packages.json')
 
 		echo(chalk.dim(`Reading published packages from ${publishedPackagesPath}`))
 

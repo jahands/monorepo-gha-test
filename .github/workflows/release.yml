@@ -62,7 +62,7 @@ jobs:
         with:
           publish: pnpm changeset publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Get Latest Commit SHA
         if: steps.create-release-pr.outputs.hasChangesets == 'true'
         id: get-sha
@@ -71,7 +71,7 @@ jobs:
         if: steps.create-release-pr.outputs.hasChangesets == 'true'
         run: gh workflow run branches.yml --ref changeset-release/main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Save Published Packages
         if: steps.create-release-pr.outputs.published == 'true'
         run: |

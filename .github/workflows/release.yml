@@ -61,6 +61,12 @@ jobs:
         with:
           publish: pnpm changeset publish
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Trigger Main Workflow Deploy
+        if: steps.create-release-pr.outputs.published == 'true'
+        run: |
+          gh workflow run main.yml --ref main
+        env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Save Published Packages
         if: steps.create-release-pr.outputs.published == 'true'

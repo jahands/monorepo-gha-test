@@ -13,9 +13,5 @@ export const deployWorkersProductionCmd = new Command('deploy-workers-production
 
 		await $({
 			verbose: true,
-			env: {
-				...process.env,
-				FORCE_COLOR: '1',
-			},
 		})`turbo deploy ${filters}`
 	})

@@ -1,5 +1,13 @@
 # @repo/tools
 
+## 0.4.3
+
+### Patch Changes
+
+- cb74ba8: some patch 123
+- Updated dependencies [cb74ba8]
+  - @repo/zod@0.1.5
+
 ## 0.4.2
 
 ### Patch Changes

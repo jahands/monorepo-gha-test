@@ -1,5 +1,13 @@
 # example-worker-echoback
 
+## 0.4.2
+
+### Patch Changes
+
+- cb74ba8: some patch 123
+- Updated dependencies [cb74ba8]
+  - @repo/hono-helpers@0.1.7
+
 ## 0.4.1
 
 ### Patch Changes

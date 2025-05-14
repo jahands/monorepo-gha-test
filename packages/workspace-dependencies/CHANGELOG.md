@@ -1,5 +1,14 @@
 # @repo/workspace-dependencies
 
+## 0.1.8
+
+### Patch Changes
+
+- cb74ba8: some patch 123
+- Updated dependencies [cb74ba8]
+  - @repo/tools@0.4.3
+  - @repo/zod@0.1.5
+
 ## 0.1.7
 
 ### Patch Changes

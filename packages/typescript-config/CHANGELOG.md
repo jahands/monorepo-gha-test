@@ -1,5 +1,11 @@
 # @repo/typescript-config
 
+## 0.1.4
+
+### Patch Changes
+
+- cb74ba8: some patch 123
+
 ## 0.1.3
 
 ### Patch Changes

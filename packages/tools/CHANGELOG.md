@@ -1,5 +1,11 @@
 # @repo/tools
 
+## 0.4.1
+
+### Patch Changes
+
+- 7220179: remove force color (already added by gha)
+
 ## 0.4.0
 
 ### Minor Changes

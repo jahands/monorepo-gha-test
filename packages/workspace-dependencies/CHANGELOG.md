@@ -1,5 +1,12 @@
 # @repo/workspace-dependencies
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [7220179]
+  - @repo/tools@0.4.1
+
 ## 0.1.5
 
 ### Patch Changes

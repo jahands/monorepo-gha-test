@@ -1,4 +1,3 @@
-import * as path from 'path'
 import { program } from '@commander-js/extra-typings'
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 

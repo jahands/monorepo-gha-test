@@ -21,6 +21,7 @@
 		"@jahands/cli-tools": "0.10.0",
 		"@repo/zod": "workspace:*",
 		"@types/node": "22.15.16",
+		"chalk": "5.3.0",
 		"cli-table3": "0.6.5",
 		"commander": "13.1.0",
 		"empathic": "1.1.0",

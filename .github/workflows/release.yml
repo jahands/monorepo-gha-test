@@ -63,7 +63,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Trigger Main Workflow Deploy
-        if: steps.create-release-pr.outputs.published == 'true'
+        if: steps.create-release-pr.outputs.hasChangesets == 'true'
         run: |
           gh workflow run main.yml --ref changeset-release/main
         env:

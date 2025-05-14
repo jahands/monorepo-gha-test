@@ -12,7 +12,10 @@ jobs:
     name: Check
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    concurrency: ${{ github.workflow }}
+    strategy:
+      matrix:
+        node-version: [20, 22, 'lts/*']
+    concurrency: ${{ github.workflow }}-${{ matrix.node-version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -20,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --child-concurrency=10

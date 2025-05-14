@@ -4,6 +4,11 @@ on:
   push:
     branches-ignore: ['main']
   workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to associate with this run'
+        required: true
+        type: number
 
 env:
   FORCE_COLOR: 1
@@ -17,6 +22,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
       - uses: pnpm/action-setup@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4

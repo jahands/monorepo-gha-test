@@ -69,7 +69,8 @@ jobs:
         run: echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Trigger Main Workflow Deploy
         if: steps.create-release-pr.outputs.hasChangesets == 'true'
-        run: gh workflow run branches.yml --ref changeset-release/main
+        run: |
+          gh workflow run branches.yml --ref changeset-release/main --raw-field pr_number=${{ steps.create-release-pr.outputs.pullRequestNumber }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Save Published Packages
